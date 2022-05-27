@@ -6,6 +6,8 @@ public class main {
 
 		
 		System.out.println("°¨ÀÚÆÀ");
+		System.out.println("push : ¾öÅÂ±Õ");
+		
 		
 	}
 
