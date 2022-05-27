@@ -7,7 +7,7 @@ public class main {
 		
 		System.out.println("°¨ÀÚÆÀ");
 		System.out.println("push : ¾öÅÂ±Õ");
-		
+		System.out.println("push : »óÀÍ");
 		
 	}
 
