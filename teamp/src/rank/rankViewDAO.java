@@ -1,4 +1,4 @@
-package user;
+package rank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class loginDAO {
+
+public class rankViewDAO {
 	Connection conn;
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	public void login(userDTO dto) {
+	public void rankView(rankDTO dto) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 		String db_id = "campus_f_0516_3";
 		String db_pw = "smhrd3";
@@ -28,25 +28,19 @@ public class loginDAO {
 			e.printStackTrace();
 		}
 
-		String id = dto.getId();
-		String pw = dto.getPw();
+		String name = dto.getNickname();
+		int round = dto.getBestround();
 
-		String sql = "select pw from member where id = ?";
+		String sql = "select * from rank order by bestround";
+
 		try {
 			psmt = conn.prepareStatement(sql);
-			// ?는 반드시 execute전에 설정이 되어 있어야 한다
-			psmt.setString(1, dto.getId());
 			rs = psmt.executeQuery();
-
-			if (rs.next()) {
-				String result = rs.getString(1);
-				if (result.equals(dto.getPw())) {
-					System.out.println("로그인성공");
-				} else {
-					System.out.println("로그인 실패");
-				}
+			while (rs.next()) {
+				System.out.print(rs.getString(1) + "\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.println(rs.getString(3));
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -61,5 +55,6 @@ public class loginDAO {
 				e.printStackTrace();
 			}
 		}
+
 	}
 }

@@ -1,4 +1,4 @@
-package user;
+package rank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,18 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class loginDAO {
+
+public class rankDAO {
 	Connection conn;
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	public void login(userDTO dto) {
+	public void rankInsert(rankDTO rankdto) {
+
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 		String db_id = "campus_f_0516_3";
 		String db_pw = "smhrd3";
@@ -28,38 +29,32 @@ public class loginDAO {
 			e.printStackTrace();
 		}
 
-		String id = dto.getId();
-		String pw = dto.getPw();
-
-		String sql = "select pw from member where id = ?";
 		try {
+			String record = rankdto.getRecord();
+			String name = rankdto.getNickname();
+			int round = rankdto.getBestround();
+			String sql = "insert into rank values(?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			// ?는 반드시 execute전에 설정이 되어 있어야 한다
-			psmt.setString(1, dto.getId());
-			rs = psmt.executeQuery();
-
-			if (rs.next()) {
-				String result = rs.getString(1);
-				if (result.equals(dto.getPw())) {
-					System.out.println("로그인성공");
-				} else {
-					System.out.println("로그인 실패");
-				}
-			}
+			psmt.setString(1, record);
+			psmt.setString(2, name);
+			psmt.setInt(3, round);
+			psmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (rs != null)
-					rs.close();
-				if (psmt != null)
+				if (psmt != null) {
 					psmt.close();
-				if (conn != null)
+				}
+				if (conn != null) {
 					conn.close();
+				}
 			} catch (SQLException e) {
+
 				e.printStackTrace();
 			}
 		}
 	}
+
 }
