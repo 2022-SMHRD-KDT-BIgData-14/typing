@@ -11,7 +11,8 @@ public class loginDAO {
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	public void login(userDTO dto) {
+	String str;
+	public String login(userDTO dto) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -41,9 +42,10 @@ public class loginDAO {
 			if (rs.next()) {
 				String result = rs.getString(1);
 				if (result.equals(dto.getPw())) {
-					System.out.println("로그인성공");
-				} else {
-					System.out.println("로그인 실패");
+					str = "로그인 성공";
+				}
+				else{
+					str = "로그인 실패";
 				}
 			}
 
@@ -61,5 +63,6 @@ public class loginDAO {
 				e.printStackTrace();
 			}
 		}
+		return str;
 	}
 }
