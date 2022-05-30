@@ -2,9 +2,10 @@ package rank;
 
 public class rankDTO {
 	
-	String  record, nickname, bestround;
+	String  record, nickname;
+	int bestround;
 
-	public rankDTO(String record, String nickname, String bestround) {
+	public rankDTO(String record, String nickname, int bestround) {
 		this.record = record;
 		this.nickname = nickname;
 		this.bestround = bestround;
@@ -26,11 +27,11 @@ public class rankDTO {
 		this.nickname = nickname;
 	}
 
-	public String getBestround() {
+	public int getBestround() {
 		return bestround;
 	}
 
-	public void setBestround(String bestround) {
+	public void setBestround(int bestround) {
 		this.bestround = bestround;
 	}
 	

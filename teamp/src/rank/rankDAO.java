@@ -30,14 +30,14 @@ public class rankDAO {
 		}
 
 		try {
-			String record = rankdto.getNickname();
-			String name = rankdto.getBestround();
-			String round = rankdto.getBestround();
+			String record = rankdto.getRecord();
+			String name = rankdto.getNickname();
+			int round = rankdto.getBestround();
 			String sql = "insert into rank values(?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, record);
 			psmt.setString(2, name);
-			psmt.setString(3, round);
+			psmt.setInt(3, round);
 			psmt.executeUpdate();
 
 		} catch (SQLException e) {

@@ -29,7 +29,7 @@ public class rankViewDAO {
 		}
 
 		String name = dto.getNickname();
-		String round = dto.getBestround();
+		int round = dto.getBestround();
 
 		String sql = "select * from rank order by bestround";
 

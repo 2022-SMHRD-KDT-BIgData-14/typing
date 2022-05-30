@@ -11,7 +11,7 @@ import user.userDTO;
 
 public class main {
 	
-	public main() {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
 		//회원가입
@@ -35,7 +35,7 @@ public class main {
 		
 		
 		//랭킹 등록및 조회 //수정가능성있음
-		rankDTO rankdto = new rankDTO(pw, user_id, user_pw);
+		rankDTO rankdto = new rankDTO("20.05.07","nick_ik" ,50 );
 		
 		rankViewDAO rankview = new rankViewDAO();
 		
