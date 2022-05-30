@@ -52,36 +52,29 @@ public class main {
 				System.out.println("잘못 입력 하셨습니다.");
 			}
 			
-			while(num ==2 ) {
-				System.out.println("[1]게임시작 [2] 랭킹조회 [3]종료");
-				num = sc.nextInt();
-				if(num == 1) {
-					//게임 코드 적어주세요
-					
-					
-					
-					
-					
-					
-				}else if(num == 2) {
-					rankview.rankView();
-					num = 2;
-				}else if(num == 3) {
-					System.out.println("종료 되었습니다.");
-					break;
-				}else {
-					System.out.println("잘못 입력 하셨습니다.");
-					num = 2;
-				}
 			}
-			if(num == 3) {
+		while(num ==2 ) {
+			System.out.println("[1]게임시작 [2] 랭킹조회 [3]종료");
+			num = sc.nextInt();
+			if(num == 1) {
+				//게임 코드 적어주세요
+				
+				
+				
+				
+				
+				
+			}else if(num == 2) {
+				rankview.rankView();
+				num = 2;
+			}else if(num == 3) {
+				System.out.println("종료 되었습니다.");
 				break;
+			}else {
+				System.out.println("잘못 입력 하셨습니다.");
+				num = 2;
 			}
-			
 		}
-		
-		
-		
 
 //		랭킹 등록및 조회 //수정가능성있음
 //		rankDTO rankdto = new rankDTO("20.05.18 07:41:22.0","nick_i" ,50 );
