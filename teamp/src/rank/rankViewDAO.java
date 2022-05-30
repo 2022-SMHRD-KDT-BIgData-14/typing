@@ -12,7 +12,7 @@ public class rankViewDAO {
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	public void rankView(rankDTO dto) {
+	public void rankView() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -27,9 +27,6 @@ public class rankViewDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-		String name = dto.getNickname();
-		int round = dto.getBestround();
 
 		String sql = "select * from rank order by bestround";
 

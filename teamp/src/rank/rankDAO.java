@@ -11,8 +11,8 @@ public class rankDAO {
 	Connection conn;
 	PreparedStatement psmt;
 	ResultSet rs;
-
-	public void rankInsert(rankDTO rankdto) {
+	public int rankInsert(rankDTO rankdto) {
+		int cnt = 0;
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -25,6 +25,7 @@ public class rankDAO {
 
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
+			System.out.println("로딩성공");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -38,8 +39,8 @@ public class rankDAO {
 			psmt.setString(1, record);
 			psmt.setString(2, name);
 			psmt.setInt(3, round);
-			psmt.executeUpdate();
-
+			cnt = psmt.executeUpdate();
+			System.out.println("등록성공");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -55,6 +56,7 @@ public class rankDAO {
 				e.printStackTrace();
 			}
 		}
+		return cnt;
 	}
 
 }
