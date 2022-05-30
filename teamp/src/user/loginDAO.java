@@ -50,7 +50,7 @@ public class loginDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("아이디가 틀렸습니다.");
 		} finally {
 			try {
 				if (rs != null)
