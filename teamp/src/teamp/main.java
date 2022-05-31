@@ -2,6 +2,7 @@ package teamp;
 
 import java.util.Scanner;
 
+import character.TEst;
 import gameplay.Gameplay;
 import rank.rankDAO;
 import rank.rankDTO;
@@ -60,7 +61,20 @@ public class main {
 			num = sc.nextInt();
 			if(num == 1) {
 				//게임 코드 적어주세요
-				
+				System.out.println("닉네임을 입력하세요");
+				System.out.print("닉네임 : ");
+				String str = sc.next();
+				TEst test = new TEst();
+				test.mainchar();
+				while (true) {
+					System.out.println("캐릭터 능력치를 돌리겠습니까");
+					System.out.println("[1] 돌린다 [2] 이대로 간다");
+					num = sc.nextInt();
+					test.mainchar();
+					if (num == 2) {
+						break;
+					}
+				}
 				Gameplay play = new Gameplay();
 				play.gamePlay();
 				

@@ -28,7 +28,7 @@ public class rankViewDAO {
 			e.printStackTrace();
 		}
 
-		String sql = "select * from rank order by bestround";
+		String sql = "select * from (select * from rank order by bestround desc) where rownum<=10";
 
 		try {
 			psmt = conn.prepareStatement(sql);
