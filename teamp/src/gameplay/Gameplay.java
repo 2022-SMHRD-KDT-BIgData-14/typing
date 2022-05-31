@@ -7,15 +7,17 @@ import rank.rankViewDAO;
 
 public class Gameplay {
 
-	public void gamePlay() {
+	public void gamePlay(CharacterDTO charNic) {
 		GameOption option = new GameOption();
 		GameDAO dao = new GameDAO();
 		Scanner sc = new Scanner(System.in);
 		dao.connect();
-		//여기는 캐릭터 정보 받아와야되는 부분
+	
+		
+		System.out.println(dao.characterStat(1,charNic));
+		System.out.println(dao.characterStat(2,charNic));
+		System.out.println(dao.characterStat(3,charNic));
 		dao.close();
-		
-		
 		
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
 		int bossAtt = 5;

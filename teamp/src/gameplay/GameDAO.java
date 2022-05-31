@@ -6,10 +6,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import character.CharacterDAO;
+import character.CharacterDTO;
+
 public class GameDAO {
 	ResultSet rs;
 	Connection conn = null;
 	PreparedStatement psmt = null;
+
+	
 	// 서버 연결
 	public void connect() {
 		try {
@@ -31,8 +36,9 @@ public class GameDAO {
 	}
 
 	// 케릭터 정보 가져오기 (수정요망)
-	public int characterStat(int num) {
-		String sql = "select * from character";
+	public int characterStat(int num,CharacterDTO charNic) {
+		String str = charNic.getnickname();
+		String sql = "select att, def, hp from character where nickname = "+str;
 		String att = "";
 		String def = "";
 		String hp = "";
@@ -69,7 +75,7 @@ public class GameDAO {
 		} else {
 			return 0;
 		}
-//
+
 	}
 
 // 서버 닫기
