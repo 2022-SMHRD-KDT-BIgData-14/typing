@@ -38,7 +38,7 @@ public class GameDAO {
 	// 케릭터 정보 가져오기 (수정요망)
 	public int characterStat(int num,CharacterDTO charNic) {
 		String str = charNic.getnickname();
-		String sql = "select att, def, hp from character where nickname = "+str;
+		String sql = "select att, def, hp from character where nickname = "+"'"+str+"'";
 		String att = "";
 		String def = "";
 		String hp = "";
@@ -47,17 +47,17 @@ public class GameDAO {
 			rs = psmt.executeQuery();
 //			System.out.print("ID" + "\t");
 //			System.out.print("NICNAME" + "\t");
-			System.out.print("ATT" + "\t");
-			System.out.print("DEF" + "\t");
-			System.out.print("HP" + "\t");
+//			System.out.print("ATT" + "\t");
+//			System.out.print("DEF" + "\t");
+//			System.out.print("HP" + "\t");
 			System.out.println("");
 			while (rs.next()) {
 				att = rs.getString(1);
 				def = rs.getString(2);
 				hp = rs.getString(3);
-				System.out.print(att + "\t");
-				System.out.print(def + "\t");
-				System.out.println(hp);
+//				System.out.print(att + "\t");
+//				System.out.print(def + "\t");
+//				System.out.println(hp);
 			}
 
 		} catch (SQLException e) {

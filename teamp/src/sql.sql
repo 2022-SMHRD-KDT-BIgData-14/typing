@@ -1,1 +1,1 @@
-select * from rank;
+select * from character;

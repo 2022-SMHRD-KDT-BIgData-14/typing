@@ -6,7 +6,7 @@ public class CharacterDTO {
 	int def;
 	String nickname;
 	
-	public CharacterDTO(String nickname) {
+public CharacterDTO(String nickname) {
 		this.nickname = nickname;
 	}
 

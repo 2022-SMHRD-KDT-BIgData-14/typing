@@ -7,26 +7,23 @@ import rank.rankViewDAO;
 
 public class Gameplay {
 
-	public void gamePlay(CharacterDTO charNic) {
+	public int gamePlay(CharacterDTO charNic) {
 		GameOption option = new GameOption();
 		GameDAO dao = new GameDAO();
 		Scanner sc = new Scanner(System.in);
 		dao.connect();
 	
 		
-		System.out.println(dao.characterStat(1,charNic));
-		System.out.println(dao.characterStat(2,charNic));
-		System.out.println(dao.characterStat(3,charNic));
-		dao.close();
 		
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
 		int bossAtt = 5;
-		int heroHp = 200;// 캐릭정보 받아오면 수정될부분
-		int heroDef = 4;//
-		int heroAtt = 50;//
+		int heroHp = dao.characterStat(3,charNic);
+		int heroDef = dao.characterStat(2,charNic);
+		int heroAtt = dao.characterStat(1,charNic);
 		int round =1;
 		int i =0;
 		int turn =1;
+		dao.close();
 // 타이핑 공격
 		while (true) {
 			System.out.println("ROUND"+round++);
@@ -77,15 +74,12 @@ public class Gameplay {
 			}
 			i++;
 			System.out.println("=============="+round+"클리어==============");
-			System.out.println("[1]다음 라운드  [2]랭킹 등록  [3]종료");
+			System.out.println("[1]다음 라운드    [2]종료");
 			int input =sc.nextInt();
-			if(input==3) {
-				System.out.println("게임이 종료되었습니다");
+			if(input==2) {
 				break;
 			}
-			else if(input ==2) {
-			}
 		}
-
+		return round;
 	}
 }

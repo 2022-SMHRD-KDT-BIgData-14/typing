@@ -88,13 +88,13 @@ public class main {
 				}
 				
 				Gameplay play = new Gameplay();
-				play.gamePlay();
+				int round=play.gamePlay(cdto);
 				
 				System.out.println("랭킹을 등록 하시겠습니까");
 				System.out.println("[1]등록 [2]종료");
 				num = sc.nextInt();
 				if(num == 1) {
-				rankDTO rankdto = new rankDTO(cdto.getnickname(), num);
+				rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
 				rankdao.rankInsert(rankdto);
 				System.out.println("랭킹등록 완료");
 				}else if (num==2){

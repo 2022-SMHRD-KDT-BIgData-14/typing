@@ -33,6 +33,7 @@ public class rankViewDAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
+			System.out.print("      -등록일-\t\t-닉네임-\t-최고라운드-\n");
 			while (rs.next()) {
 				System.out.print(rs.getString(1) + "\t");
 				System.out.print(rs.getString(2)+"\t");
