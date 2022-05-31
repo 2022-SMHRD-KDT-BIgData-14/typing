@@ -120,7 +120,7 @@ public class main {
 		
 		// 복사 수정용ㅁ
 		
-		
+		System.out.println("바보");
 		
 	}
 
