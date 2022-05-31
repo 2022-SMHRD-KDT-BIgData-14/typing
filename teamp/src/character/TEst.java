@@ -5,12 +5,18 @@ import java.util.Scanner;
 
 public class TEst {
 	
+	String nickname;
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public CharacterDTO mainchar() {
 		int num = 1;
 		int att=0;
 		int def=0;
 		int hp = 0;
-		String nickname;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("캐릭터명을 입력하세요★");
 		System.out.println("캐릭터명: ");

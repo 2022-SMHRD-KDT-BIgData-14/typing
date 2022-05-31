@@ -31,14 +31,13 @@ public class rankDAO {
 		}
 
 		try {
-			String record = rankdto.getRecord();
 			String name = rankdto.getNickname();
 			int round = rankdto.getBestround();
-			String sql = "insert into rank values(?,?,?)";
+			String sql = "insert into rank values(SYSDATE,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, record);
-			psmt.setString(2, name);
-			psmt.setInt(3, round);
+//			psmt.setString(1, record);
+			psmt.setString(1, name);
+			psmt.setInt(2, round);
 			cnt = psmt.executeUpdate();
 			System.out.println("등록성공");
 		} catch (SQLException e) {

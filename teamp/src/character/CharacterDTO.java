@@ -5,6 +5,10 @@ public class CharacterDTO {
 	int att;
 	int def;
 	String nickname;
+	
+	public CharacterDTO(String nickname) {
+		this.nickname = nickname;
+	}
 
 	CharacterDTO(int hp, int att, int def, String nickname) {
 		

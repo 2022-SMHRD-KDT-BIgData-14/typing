@@ -20,6 +20,7 @@ public class main {
 		Scanner sc = new Scanner(System.in);
 		rankDAO rankdao = new rankDAO();
 		rankViewDAO rankview = new rankViewDAO();
+		CharacterDTO cdto;
 		int num;
 		String user_id="";
 		while (true) {
@@ -70,23 +71,37 @@ public class main {
 				TEst test = new TEst();
 				
 				CharacterDAO cdao = new CharacterDAO();
+				
 				while (true) {
-					CharacterDTO cdto = test.mainchar();
+					cdto = test.mainchar();
 					System.out.println("캐릭터 능력치를 돌리겠습니까");
 					System.out.println("[1] 돌린다 [2] 이대로 간다");
 					num = sc.nextInt();
 					if (num == 2) {
 						// 만든 캐릭터를 등록시킨다
 						cdao.CharacterBuild(cdto , user_id);
+						cdto.getnickname();
 						
 						break;
 					}
 					
 				}
+				
 				Gameplay play = new Gameplay();
 				play.gamePlay();
 				
-				
+				System.out.println("랭킹을 등록 하시겠습니까");
+				System.out.println("[1]등록 [2]종료");
+				num = sc.nextInt();
+				if(num == 1) {
+				rankDTO rankdto = new rankDTO(cdto.getnickname(), num);
+				rankdao.rankInsert(rankdto);
+				System.out.println("랭킹등록 완료");
+				}else if (num==2){
+					System.out.println("랭킹등록창 종료 합니다.");
+				}else {
+					System.out.println("잘못 입력 하셨습니다.");
+				}
 				num = 2;
 				
 			}else if(num == 2) { // 랭킹 조회
@@ -102,9 +117,6 @@ public class main {
 		}
 
 //		랭킹 등록및 조회 //수정가능성있음
-//		rankDTO rankdto = new rankDTO("20.05.18 07:41:22.0","nick_i" ,50 );
-		
-//		rankdao.rankInsert(rankdto);
 		
 		// 복사 수정용ㅁ
 		
