@@ -98,6 +98,7 @@ public class main {
 		
 //		rankdao.rankInsert(rankdto);
 		
+		// 복사 수정용ㅁ
 		
 		
 		

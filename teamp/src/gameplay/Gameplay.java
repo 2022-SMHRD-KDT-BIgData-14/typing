@@ -68,7 +68,7 @@ public class Gameplay {
 				break;
 			}
 			else if(input ==2) {
-				rankview.rankView();
+				
 			}
 		}
 
