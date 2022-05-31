@@ -14,10 +14,12 @@ import user.userDTO;
 public class main {
 	
 	public static void main(String[] args) {
+		
 		Scanner sc = new Scanner(System.in);
 		rankDAO rankdao = new rankDAO();
 		rankViewDAO rankview = new rankViewDAO();
 		int num;
+		String user_id;
 		while (true) {
 			System.out.println("[1]회원가입 [2] 로그인 [3] 종료");
 			num = sc.nextInt();
@@ -35,7 +37,7 @@ public class main {
 				dao.userInsert(dto);
 			} else if(num == 2){ // 로그인
 				System.out.print("아이디 >>> ");
-				String user_id = sc.next();
+				 user_id = sc.next();
 				System.out.print("비밀번호 >>> ");
 				String user_pw = sc.next();
 				
