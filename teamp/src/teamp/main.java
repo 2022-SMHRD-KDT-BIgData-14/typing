@@ -20,10 +20,10 @@ public class main {
 		while (true) {
 			System.out.println("[1]회원가입 [2] 로그인 [3] 종료");
 			num = sc.nextInt();
-			if (num == 3) {
+			if (num == 3) { // 종료
 				System.out.println("종료 되었습니다.");
 				break;
-			} else if (num == 1) {
+			} else if (num == 1) { // 회원가입
 				System.out.print("아이디 >>> ");
 				String id = sc.next();
 				System.out.print("비밀번호 >>> ");
@@ -32,7 +32,7 @@ public class main {
 				userDTO dto = new userDTO(id, pw);
 				userDAO dao = new userDAO(); 
 				dao.userInsert(dto);
-			} else if(num == 2){
+			} else if(num == 2){ // 로그인
 				System.out.print("아이디 >>> ");
 				String user_id = sc.next();
 				System.out.print("비밀번호 >>> ");
@@ -49,7 +49,7 @@ public class main {
 				if(userlogin.login(user_dto).equals("로그인 실패")) {
 					System.out.println("로그인 실패");
 				}
-			}else {
+			}else { // 잘못 입력 했을때
 				System.out.println("잘못 입력 하셨습니다.");
 			}
 			
@@ -64,15 +64,15 @@ public class main {
 				play.gamePlay();
 				
 				
-				
-				
-			}else if(num == 2) {
-				rankview.rankView();
 				num = 2;
-			}else if(num == 3) {
+				
+			}else if(num == 2) { // 랭킹 조회
+				rankview.rankView();
+				num = 2; 
+			}else if(num == 3) { // 종료
 				System.out.println("종료 되었습니다.");
 				break;
-			}else {
+			}else { // 잘못 입력 했을때
 				System.out.println("잘못 입력 하셨습니다.");
 				num = 2;
 			}
