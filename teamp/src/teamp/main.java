@@ -2,6 +2,7 @@ package teamp;
 
 import java.util.Scanner;
 
+import gameplay.Gameplay;
 import rank.rankDAO;
 import rank.rankDTO;
 import rank.rankViewDAO;
@@ -59,7 +60,8 @@ public class main {
 			if(num == 1) {
 				//게임 코드 적어주세요
 				
-				
+				Gameplay play = new Gameplay();
+				play.gamePlay();
 				
 				
 				
