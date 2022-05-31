@@ -40,14 +40,15 @@ public class main {
 				
 				userDTO user_dto = new userDTO(user_id, user_pw);
 				loginDAO userlogin = new loginDAO();
-				userlogin.login(user_dto);
+				String stt = userlogin.login(user_dto);
 				
-				if (userlogin.login(user_dto).equals("로그인 성공")) {
+				if (stt.equals("로그인 성공")) {
 					System.out.println("로그인 성공");
 					break;
-				}
-				if(userlogin.login(user_dto).equals("로그인 실패")) {
+				}else if(stt.equals("로그인 실패")) {
 					System.out.println("로그인 실패");
+				}else {
+					System.out.println("아이디가 틀렸습니다.");
 				}
 			}else { // 잘못 입력 했을때
 				System.out.println("잘못 입력 하셨습니다.");

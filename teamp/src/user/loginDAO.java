@@ -11,7 +11,7 @@ public class loginDAO {
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	String str;
+	String str = "아이디가 틀렸습니다.";
 	public String login(userDTO dto) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -50,7 +50,7 @@ public class loginDAO {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("아이디가 틀렸습니다.");
+			str = "아이디가 틀렸습니다.";
 		} finally {
 			try {
 				if (rs != null)
