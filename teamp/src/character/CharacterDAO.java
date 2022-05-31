@@ -9,12 +9,12 @@ import java.sql.SQLException;
 
 public class CharacterDAO {
 
-	public class rankDAO {
+	
 		Connection conn;
 		PreparedStatement psmt;
 		ResultSet rs;
 
-		public void rankInsert(CharacterDTO characterdto) {
+		public void CharacterBuild(CharacterDTO characterdto ,String id) {
 
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -35,11 +35,14 @@ public class CharacterDAO {
 				int hp = characterdto.gethp();
 				int att = characterdto.getAtt();
 				int def = characterdto.getDef();
-				String sql = "insert into character values(?,?,?)";
+				String nickname = characterdto.getnickname();
+				String sql = "insert into character values(?,?,?,?,?)";
 				psmt = conn.prepareStatement(sql);
-				psmt.setInt(1, hp);
-				psmt.setInt(2, att);
-				psmt.setInt(3, def);
+				psmt.setInt(1, att);
+				psmt.setInt(2, def);
+				psmt.setInt(3, hp);
+				psmt.setString(4, nickname);
+				psmt.setString(5, id);
 				psmt.executeUpdate();
 
 			} catch (SQLException e) {
@@ -60,4 +63,4 @@ public class CharacterDAO {
 		}
 
 	}
-}
+

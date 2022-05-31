@@ -2,6 +2,8 @@ package teamp;
 
 import java.util.Scanner;
 
+import character.CharacterDAO;
+import character.CharacterDTO;
 import character.TEst;
 import gameplay.Gameplay;
 import rank.rankDAO;
@@ -18,6 +20,7 @@ public class main {
 		rankDAO rankdao = new rankDAO();
 		rankViewDAO rankview = new rankViewDAO();
 		int num;
+		String user_id="";
 		while (true) {
 			System.out.println("[1]회원가입 [2] 로그인 [3] 종료");
 			num = sc.nextInt();
@@ -30,12 +33,12 @@ public class main {
 				System.out.print("비밀번호 >>> ");
 				String pw = sc.next();
 
-				userDTO dto = new userDTO(id, pw);
+				userDTO dto = new userDTO(user_id, pw);
 				userDAO dao = new userDAO(); 
 				dao.userInsert(dto);
 			} else if(num == 2){ // 로그인
 				System.out.print("아이디 >>> ");
-				String user_id = sc.next();
+				user_id = sc.next();
 				System.out.print("비밀번호 >>> ");
 				String user_pw = sc.next();
 				
@@ -61,19 +64,22 @@ public class main {
 			num = sc.nextInt();
 			if(num == 1) {
 				//게임 코드 적어주세요
-				System.out.println("닉네임을 입력하세요");
-				System.out.print("닉네임 : ");
-				String str = sc.next();
+			
 				TEst test = new TEst();
-				test.mainchar();
+				
+				CharacterDAO cdao = new CharacterDAO();
 				while (true) {
+					CharacterDTO cdto = test.mainchar();
 					System.out.println("캐릭터 능력치를 돌리겠습니까");
 					System.out.println("[1] 돌린다 [2] 이대로 간다");
 					num = sc.nextInt();
-					test.mainchar();
 					if (num == 2) {
+						// 만든 캐릭터를 등록시킨다
+						cdao.CharacterBuild(cdto , user_id);
+						
 						break;
 					}
+					
 				}
 				Gameplay play = new Gameplay();
 				play.gamePlay();

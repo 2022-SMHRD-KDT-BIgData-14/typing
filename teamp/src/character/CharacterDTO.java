@@ -4,12 +4,23 @@ public class CharacterDTO {
 	int hp;
 	int att;
 	int def;
+	String nickname;
 
-	CharacterDTO(int hp, int att, int def) {
+	CharacterDTO(int hp, int att, int def, String nickname) {
 		
 		this.hp = hp;
 		this.att = att;
 		this.def = def;
+		this.nickname = nickname;
+		
+	}
+
+	public String getnickname() {
+		return nickname;
+	}
+
+	public void setnickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public int gethp() {
