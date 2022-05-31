@@ -42,7 +42,7 @@ public class GameOption {
 		} else {
 			System.out.println("Miss");
 			return 0;
-		}
+		}//
 	}
 	
 

@@ -69,7 +69,7 @@ public class GameDAO {
 		} else {
 			return 0;
 		}
-
+//
 	}
 
 // ¼­¹ö ´Ý±â
