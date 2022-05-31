@@ -2,28 +2,21 @@ package gameplay;
 
 import java.util.Scanner;
 
-import character.CharacterDTO;
 import rank.rankViewDAO;
 
 public class Gameplay {
 
 	public void gamePlay() {
-		GameOption option = new GameOption();
-		GameDAO dao = new GameDAO();
+		GameOption model = new GameOption();
 		Scanner sc = new Scanner(System.in);
-		dao.connect();
-		//여기는 캐릭터 정보 받아와야되는 부분
-		dao.close();
-		
-		
-		
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
 		int bossAtt = 5;
-		int heroHp = 200;// 캐릭정보 받아오면 삭제될부분
-		int heroDef = 4;//
-		int heroAtt = 50;//
+		int heroHp = 200;
+		int heroDef = 4;
+		int heroAtt = 50;
 		int round =1;
 		int i =0;
+		rankViewDAO rankview = new rankViewDAO();
 		while (true) {
 			System.out.println("ROUND"+round++);
 			System.out.println("============================================");
@@ -33,7 +26,7 @@ public class Gameplay {
 				int fever =1;
 // hp바  
 				System.out.println("남은 보스 체력 : " + bossHp[i]);
-				int hpBar = bossHp[i] / (1000+500*i);
+				int hpBar = bossHp[i] / 1000;
 				for (int j = 0; j < hpBar + 1; j++) {
 					System.out.print("■");
 				}
@@ -42,9 +35,9 @@ public class Gameplay {
 				}
 				System.out.println();
 //-------------------------------------------------------				
-				int attack = (int) option.typingSec() * heroAtt *fever;
+				int attack = (int) model.typingSec() * heroAtt *fever;
 				// fever 버프
-				if((int) option.typingSec()!=0) {
+				if((int) model.typingSec()!=0) {
 					cnt++;
 				}
 				else {
@@ -68,13 +61,14 @@ public class Gameplay {
 				break;
 			}
 			i++;
-			System.out.println("=============="+round+"클리어==============");
+			System.out.println("==============클리어==============");
 			System.out.println("[1]다음 라운드  [2]랭킹 등록  [3]종료");
 			int input =sc.nextInt();
 			if(input==3) {
 				break;
 			}
 			else if(input ==2) {
+				rankview.rankView();
 			}
 		}
 
