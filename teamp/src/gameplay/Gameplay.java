@@ -34,8 +34,8 @@ public class Gameplay {
 			}
 			mp3.play(".\\music\\게임진행1_사용자턴 배경음.mp3");
 			
-			System.out.println("ROUND"+round++);
-			System.out.println("============================================");
+			System.out.println("== 현재 라운드 : "+ round++ + "|| 전체 라운드 : 10 ==");
+			System.out.println("===================================");
 			int cnt =0;
 			turn=1;
 			while (bossHp[i] > 0) {
