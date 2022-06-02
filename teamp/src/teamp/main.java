@@ -102,9 +102,9 @@ public class main {
 						System.out.println("랭킹등록창 종료 합니다.");
 						if (mp3.isPlaying()) {
 							mp3.stop();
-							break;
 						}
-
+						break;
+						
 					} else {
 						System.out.println("잘못 입력 하셨습니다.");
 						if (mp3.isPlaying()) {
