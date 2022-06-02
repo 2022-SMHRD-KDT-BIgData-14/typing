@@ -30,7 +30,16 @@ public class GameOption {
 		arr.add("독수리");
 		arr.add("마");
 		int i = r.nextInt(arr.size());
-		System.out.print(arr.get(i) + " >> ");
+		System.out.println("--"+arr.get(i) + "-- 입력해");
+		for(int j=3 ; j>0; j--) {
+			try {
+			System.out.println(j);
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+//				e.printStackTrace();
+			}
+		}
+		System.out.println("입력하세요");
 		long timeFirst = System.currentTimeMillis();
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;
@@ -93,6 +102,7 @@ public class GameOption {
 		System.out.println();
 	}
 
+// 캐릭터 정보 출력
 	public void characterView(String user_id) {
 		dao.connect();
 		dao.characterView(user_id);

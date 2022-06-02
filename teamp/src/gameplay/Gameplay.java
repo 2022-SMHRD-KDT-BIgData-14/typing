@@ -16,7 +16,7 @@ public class Gameplay {
 		MP3Player mp3 = new MP3Player();
 	
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
-		int bossAtt = 5;
+		int bossAtt = 120;
 		int heroHp = dao.characterStat(3,charNic);
 		int heroDef = dao.characterStat(2,charNic);
 		int heroAtt = dao.characterStat(1,charNic);
@@ -60,7 +60,7 @@ public class Gameplay {
 				}
 				bossHp[i] -= attack;
 // 방어하기		
-				heroHp -= bossAtt - heroDef;
+				heroHp -= (bossAtt - heroDef);
 				System.out.println("벌레체력 : " + heroHp);
 				if (heroHp <= 0) {
 					System.out.println("YOU die");
