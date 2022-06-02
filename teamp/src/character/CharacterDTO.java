@@ -18,7 +18,11 @@ public CharacterDTO(String nickname) {
 		this.nickname = nickname;
 		
 	}
-
+	public CharacterDTO(){
+		
+		
+	}
+	
 	public String getnickname() {
 		return nickname;
 	}
