@@ -24,12 +24,14 @@ public class main {
 		int num;
 		String user_id = "";
 		MP3Player mp3 = new MP3Player();
+		CharacterDTO dto = new CharacterDTO();
 		
 		if(mp3.isPlaying()) {
 			mp3.stop();
 		}
 		// 초기 화면
-//		option.opening();
+		dto.openask();
+		option.opening();
 		while (true) {
 			
 			mp3.play(".\\Music\\시작화면 배경음.mp3");

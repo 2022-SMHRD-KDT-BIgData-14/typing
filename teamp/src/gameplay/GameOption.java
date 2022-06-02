@@ -25,7 +25,7 @@ public class GameOption {
 		//split 및 랜덤 영단어 출력.
 		String[] arr = str.split(",");
 		int i = r.nextInt(arr.length);
-		System.out.println("--"+arr[i] + "-- 입력해");
+		System.out.println("--"+arr[i] + "-- 입력하세요");
 //		for(int j=3 ; j>0; j--) {
 //			try {
 //			System.out.println(j);
@@ -34,7 +34,7 @@ public class GameOption {
 ////				e.printStackTrace();
 //			}
 //		}
-		System.out.println("입력하세요");
+//		System.out.println("입력하세요");
 		long timeFirst = System.currentTimeMillis();
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;

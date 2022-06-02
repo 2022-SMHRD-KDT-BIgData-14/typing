@@ -45,14 +45,16 @@ public class Gameplay {
 				int fever =1;
 // hp바  		
 				option.HpBar(bossHp[i], i);
-//				if(round==2) {dto.boss1();}
-//				if(round==3) {dto.boss2();}
-//				if(round==4) {dto.boss3();}
-//				if(round==5) {dto.boss4();}
-//				if(round==6) {dto.boss5();}
-//				if(round==7) {dto.boss6();}
-//				if(round==8) {dto.boss7();}
-//				if(round==9) {dto.boss8();}
+				if(round==2) {dto.boss1();}
+				if(round==3) {dto.boss2();}
+				if(round==4) {dto.boss3();}
+				if(round==5) {dto.boss4();}
+				if(round==6) {dto.boss5();}
+				if(round==7) {dto.boss6();}
+				if(round==8) {dto.boss7();}
+				if(round==9) {dto.boss8();}
+				if(round==10) {dto.boss9();}
+				if(round==11) {dto.boss10();}
 				int typingAtt=(int) option.typingSec();
 				int attack = typingAtt * heroAtt *fever;
 				// fever 버프
@@ -71,7 +73,7 @@ public class Gameplay {
 				heroHp -= (bossAtt - heroDef);
 				System.out.println("벌레체력 : " + heroHp);
 				if (heroHp <= 0) {
-					System.out.println("YOU die");
+					dto.failask();
 					break;
 				}
 				
@@ -93,6 +95,9 @@ public class Gameplay {
 			mp3.play(".\\music\\게임진행3_라운드상승 배경음.mp3");
 			
 			if(round==11) {
+				dto.endingask();
+				System.out.println();
+				//시간 남으면 시간으로 나오기
 				System.out.println("돼지감자 퇴치이후 좀비 확찐자 바이러스는 영원히 소멸되었다.\r\n"
 						+ "         잠시 혼란스러웠던 대관령은 모두의 협조를 통해 빠르게 복구되었고\r\n"
 						+ "         평화를 되찾았다.");
