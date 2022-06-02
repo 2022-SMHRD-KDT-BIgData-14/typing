@@ -17,7 +17,7 @@ public class Gameplay {
 		CharacterDTO dto = new CharacterDTO();
 	
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
-		int bossAtt = 120;
+		int bossAtt = 40;
 		int heroHp = dao.characterStat(3,charNic);
 		int heroDef = dao.characterStat(2,charNic);
 		int heroAtt = dao.characterStat(1,charNic);
@@ -45,14 +45,14 @@ public class Gameplay {
 				int fever =1;
 // hp바  		
 				option.HpBar(bossHp[i], i);
-				if(round==2) {dto.boss1();}
-				if(round==3) {dto.boss2();}
-				if(round==4) {dto.boss3();}
-				if(round==5) {dto.boss4();}
-				if(round==6) {dto.boss5();}
-				if(round==7) {dto.boss6();}
-				if(round==8) {dto.boss7();}
-				if(round==9) {dto.boss8();}
+//				if(round==2) {dto.boss1();}
+//				if(round==3) {dto.boss2();}
+//				if(round==4) {dto.boss3();}
+//				if(round==5) {dto.boss4();}
+//				if(round==6) {dto.boss5();}
+//				if(round==7) {dto.boss6();}
+//				if(round==8) {dto.boss7();}
+//				if(round==9) {dto.boss8();}
 				int typingAtt=(int) option.typingSec();
 				int attack = typingAtt * heroAtt *fever;
 				// fever 버프
