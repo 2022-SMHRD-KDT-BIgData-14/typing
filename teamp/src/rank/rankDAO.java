@@ -35,7 +35,6 @@ public class rankDAO {
 			int round = rankdto.getBestround();
 			String sql = "insert into rank values(SYSDATE,?,?)";
 			psmt = conn.prepareStatement(sql);
-//			psmt.setString(1, record);
 			psmt.setString(1, name);
 			psmt.setInt(2, round);
 			cnt = psmt.executeUpdate();

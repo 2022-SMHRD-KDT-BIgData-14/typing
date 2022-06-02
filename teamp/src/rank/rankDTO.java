@@ -1,7 +1,5 @@
 package rank;
 
-import character.CharacterDTO;
-
 public class rankDTO {
 	
 	String  nickname;

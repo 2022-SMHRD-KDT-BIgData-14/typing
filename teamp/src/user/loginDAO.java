@@ -35,7 +35,6 @@ public class loginDAO {
 		String sql = "select pw from member where id = ?";
 		try {
 			psmt = conn.prepareStatement(sql);
-			// ?는 반드시 execute전에 설정이 되어 있어야 한다
 			psmt.setString(1, dto.getId());
 			rs = psmt.executeQuery();
 

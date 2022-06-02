@@ -1,10 +1,5 @@
 package gameplay;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,8 +7,6 @@ import java.util.Scanner;
 import character.CharacterDAO;
 import character.CharacterDTO;
 import character.CharacterGenerator;
-import javazoom.jl.player.MP3Player;
-import user.userDTO;
 
 public class GameOption {
 	Scanner sc = new Scanner(System.in);

@@ -2,17 +2,12 @@ package teamp;
 
 import java.util.Scanner;
 
-import character.CharacterDAO;
 import character.CharacterDTO;
-import character.CharacterGenerator;
 import gameplay.GameOption;
 import gameplay.Gameplay;
 import rank.rankDAO;
 import rank.rankDTO;
 import rank.rankViewDAO;
-import user.loginDAO;
-import user.userDAO;
-import user.userDTO;
 
 public class main {
 
@@ -98,9 +93,7 @@ public class main {
 			}
 		}
 
-//		랭킹 등록및 조회 //수정가능성있음
-
-		System.out.println("바보이상익");
+//	 게임 종류후 화면
 
 	}
 

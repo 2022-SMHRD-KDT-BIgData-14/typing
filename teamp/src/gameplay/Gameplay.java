@@ -13,8 +13,6 @@ public class Gameplay {
 		Scanner sc = new Scanner(System.in);
 		dao.connect();
 	
-		
-		
 		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
 		int bossAtt = 5;
 		int heroHp = dao.characterStat(3,charNic);

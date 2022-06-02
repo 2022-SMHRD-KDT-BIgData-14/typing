@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import character.CharacterDAO;
 import character.CharacterDTO;
 
 public class GameDAO {
@@ -29,13 +28,12 @@ public class GameDAO {
 
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
-//			System.out.println("연결성공");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	// 케릭터 정보 가져오기 (수정요망)
+	// 케릭터 정보 가져오기
 	public int characterStat(int num,CharacterDTO charNic) {
 		String str = charNic.getnickname();
 		String sql = "select att, def, hp from character where nickname = "+"'"+str+"'";
@@ -75,7 +73,6 @@ public class GameDAO {
 				psmt.close();
 			if (conn != null)
 				conn.close();
-//			System.out.println("닫힘성공");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
