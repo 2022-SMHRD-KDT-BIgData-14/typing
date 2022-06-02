@@ -29,6 +29,7 @@ public class main {
 			mp3.stop();
 		}
 		// 초기 화면
+		option.opening();
 		while (true) {
 			
 			mp3.play(".\\Music\\시작화면 배경음.mp3");

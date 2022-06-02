@@ -17,7 +17,7 @@ public class rankDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 		String db_id = "campus_f_0516_3";
@@ -27,7 +27,7 @@ public class rankDAO {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
 			System.out.println("로딩성공");
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 
 		try {
@@ -40,7 +40,7 @@ public class rankDAO {
 			cnt = psmt.executeUpdate();
 			System.out.println("등록성공");
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			try {
 				if (psmt != null) {
@@ -51,7 +51,7 @@ public class rankDAO {
 				}
 			} catch (SQLException e) {
 
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 		return cnt;

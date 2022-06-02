@@ -16,7 +16,7 @@ public class rankViewDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 		String db_id = "campus_f_0516_3";
@@ -25,7 +25,7 @@ public class rankViewDAO {
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 
 		String sql = "select * from (select * from rank order by bestround desc) where rownum<=10";
@@ -40,7 +40,7 @@ public class rankViewDAO {
 				System.out.println(rs.getString(3));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			try {
 				if (rs != null)
@@ -50,7 +50,7 @@ public class rankViewDAO {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 

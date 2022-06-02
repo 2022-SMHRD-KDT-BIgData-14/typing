@@ -25,6 +25,7 @@ public class Gameplay {
 		int turn =1;
 		dao.close();
 
+	
 		
 // 타이핑 공격
 		while (true) {
