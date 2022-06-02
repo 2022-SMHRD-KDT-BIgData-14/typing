@@ -76,7 +76,7 @@ public class Gameplay {
 				break;
 			}
 			i++;
-			System.out.println("=============="+round+"클리어==============");
+			System.out.println("=============="+round+"라운드 클리어==============");
 			
 			if(mp3.isPlaying()) {
 				mp3.stop();

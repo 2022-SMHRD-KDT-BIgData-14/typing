@@ -33,7 +33,7 @@ public class main {
 			
 			mp3.play(".\\Music\\시작화면 배경음.mp3");
 			
-			System.out.println("[1]회원가입 [2] 로그인 [3] 종료");
+			System.out.println("[1]회원가입  [2]로그인  [3]종료");
 			num = sc.nextInt();
 
 			// 종료
@@ -63,7 +63,7 @@ public class main {
 				mp3.stop();
 			}
 			mp3.play(".\\music\\메뉴선택시 효과음.mp3");
-			System.out.println("[1]게임시작 [2] 랭킹조회 [3]종료");
+			System.out.println("[1]게임시작  [2]랭킹조회  [3]종료");
 			num = sc.nextInt();
 			
 			
@@ -84,7 +84,7 @@ public class main {
 				int round = play.gamePlay(cdto);
 
 				System.out.println("랭킹을 등록 하시겠습니까");
-				System.out.println("[1]등록 [2]종료");
+				System.out.println("[1]등록  [2]종료");
 				num = sc.nextInt();
 				if (num == 1) {
 					rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
