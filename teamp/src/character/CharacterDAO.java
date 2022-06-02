@@ -14,7 +14,7 @@ public class CharacterDAO {
 		PreparedStatement psmt;
 		ResultSet rs;
 
-		public void CharacterBuild(CharacterDTO characterdto ,String id) {
+		public int CharacterBuild(CharacterDTO characterdto ,String id) {
 
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -30,7 +30,6 @@ public class CharacterDAO {
 			} catch (SQLException e) {
 //				e.printStackTrace();
 			}
-
 			try {
 				int hp = characterdto.gethp();
 				int att = characterdto.getAtt();
@@ -44,10 +43,12 @@ public class CharacterDAO {
 				psmt.setString(4, nickname);
 				psmt.setString(5, id);
 				psmt.executeUpdate();
-
+				return 0;
 			} catch (SQLException e) {
 //				e.printStackTrace();
-			} finally {
+				return 1;
+			}
+			 finally {
 				try {
 					if (psmt != null) {
 						psmt.close();

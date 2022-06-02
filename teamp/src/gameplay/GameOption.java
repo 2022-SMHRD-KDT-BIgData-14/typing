@@ -69,23 +69,34 @@ public class GameOption {
 
 // 캐릭터 생성
 	public CharacterDTO characterProduct(int num, String user_id) {
-
-		String nick=charGenerator.charNickname();
+		CharacterDTO cdto = new CharacterDTO();
+		int i =0;
 		while (true) {
-			CharacterDTO cdto = charGenerator.mainchar(nick); // 캐릭터입력과 능력치 분리시켜야함
-			System.out.println("캐릭터 능력치를 돌리겠습니까");
-			System.out.println("[1] 돌린다 [2] 이대로 간다");
-			num = sc.nextInt();
-			if (num == 2) {
-				// 만든 캐릭터를 등록시킨다
-				cdao.CharacterBuild(cdto, user_id);
-				return cdto;
-			}else if(num == 1) {
-				
-			}else {
-				System.out.println("번호를 잘못 입력 하셨습니다.");
+			if(i>=1) {System.out.println("닉네임이 중복되었습니다");}
+			String nick = charGenerator.charNickname();
+			while (true) {
+				cdto = charGenerator.mainchar(nick); // 캐릭터입력과 능력치 분리시켜야함
+				System.out.println("캐릭터 능력치를 돌리겠습니까");
+				System.out.println("[1] 돌린다 [2] 이대로 간다");
+				num = sc.nextInt();
+				if (num == 2) {
+					// 만든 캐릭터를 등록시킨다
+					if (cdao.CharacterBuild(cdto, user_id) == 1) {
+						break;
+					}
+					return cdto;
+				} else if (num == 1) {
+
+				} else {
+					System.out.println("번호를 잘못 입력 하셨습니다.");
+				}
 			}
-		}
+			i++;
+			if (cdao.CharacterBuild(cdto, user_id) == 0) {
+				break;
+			}
+
+		} return cdto;
 	}
 
 // 게임 오프닝 문구
