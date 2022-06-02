@@ -39,39 +39,29 @@ public class GameDAO {
 	public int characterStat(int num,CharacterDTO charNic) {
 		String str = charNic.getnickname();
 		String sql = "select att, def, hp from character where nickname = "+"'"+str+"'";
-		String att = "";
-		String def = "";
-		String hp = "";
+		int att=0;
+		int def=0;
+		int hp =0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-//			System.out.print("ID" + "\t");
-//			System.out.print("NICNAME" + "\t");
-//			System.out.print("ATT" + "\t");
-//			System.out.print("DEF" + "\t");
-//			System.out.print("HP" + "\t");
 			System.out.println("");
 			while (rs.next()) {
-				att = rs.getString(1);
-				def = rs.getString(2);
-				hp = rs.getString(3);
-//				System.out.print(att + "\t");
-//				System.out.print(def + "\t");
-//				System.out.println(hp);
+				att = rs.getInt(1);
+				def = rs.getInt(2);
+				hp = rs.getInt(3);
+				
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		int attack = Integer.parseInt(att);
-		int defend = Integer.parseInt(def);
-		int health = Integer.parseInt(hp);
 		if (num == 1) {
-			return attack;
+			return att;
 		} else if (num == 2) {
-			return defend;
+			return def;
 		} else if (num == 3) {
-			return health;
+			return hp;
 		} else {
 			return 0;
 		}

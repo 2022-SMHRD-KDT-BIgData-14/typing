@@ -24,6 +24,10 @@ public class Gameplay {
 		int i =0;
 		int turn =1;
 		dao.close();
+
+		
+		
+		
 // 타이핑 공격
 		while (true) {
 			System.out.println("ROUND"+round++);
@@ -35,17 +39,9 @@ public class Gameplay {
 				turn++;
 				int fever =1;
 // hp바  		
-				System.out.println("남은 보스 체력 : " + bossHp[i]);
-				int hpBar = bossHp[i] / (1000+500*i);
-				for (int j = 0; j < hpBar + 1; j++) {
-					System.out.print("■");
-				}
-				for (int j = 0; j < 10 - hpBar; j++) {
-					System.out.print("□");
-				}
-				System.out.println();
-				int typingAtt=(int) option.typingSec();
+				option.HpBar(bossHp[i], i);
 //-------------------------------------------------------				
+				int typingAtt=(int) option.typingSec();
 				int attack = typingAtt * heroAtt *fever;
 				// fever 버프
 				if(typingAtt!=0) {
