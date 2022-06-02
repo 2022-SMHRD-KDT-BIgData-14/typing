@@ -71,7 +71,7 @@ public class GameOption {
 	public CharacterDTO characterProduct(int num, String user_id) {
 
 		while (true) {
-			CharacterDTO cdto = charGenerator.mainchar();
+			CharacterDTO cdto = charGenerator.mainchar(); // 캐릭터입력과 능력치 분리시켜야함
 			System.out.println("캐릭터 능력치를 돌리겠습니까");
 			System.out.println("[1] 돌린다 [2] 이대로 간다");
 			num = sc.nextInt();
@@ -79,6 +79,10 @@ public class GameOption {
 				// 만든 캐릭터를 등록시킨다
 				cdao.CharacterBuild(cdto, user_id);
 				return cdto;
+			}else if(num == 1) {
+				
+			}else {
+				System.out.println("번호를 잘못 입력 하셨습니다.");
 			}
 		}
 	}

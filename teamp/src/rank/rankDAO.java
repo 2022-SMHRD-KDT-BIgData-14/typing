@@ -25,7 +25,6 @@ public class rankDAO {
 
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
-			System.out.println("로딩성공");
 		} catch (SQLException e) {
 //			e.printStackTrace();
 		}
@@ -38,7 +37,6 @@ public class rankDAO {
 			psmt.setString(1, name);
 			psmt.setInt(2, round);
 			cnt = psmt.executeUpdate();
-			System.out.println("등록성공");
 		} catch (SQLException e) {
 //			e.printStackTrace();
 		} finally {

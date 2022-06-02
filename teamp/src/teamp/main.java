@@ -83,33 +83,36 @@ public class main {
 					mp3.stop();
 				}
 				int round = play.gamePlay(cdto);
-
+				
 				System.out.println("랭킹을 등록 하시겠습니까");
-				System.out.println("[1]등록  [2]종료");
-				num = sc.nextInt();
-				if (num == 1) {
-					rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
-					rankdao.rankInsert(rankdto);
-					
-					System.out.println("랭킹등록 완료");
-					if(mp3.isPlaying()) {
-						mp3.stop();
+				while (true) {
+					System.out.println("[1]등록  [2]종료");
+					num = sc.nextInt();
+					if (num == 1) {
+						rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
+						rankdao.rankInsert(rankdto);
+
+						System.out.println("랭킹등록 완료");
+						if (mp3.isPlaying()) {
+							mp3.stop();
+						}
+							num = 2;
+							break;
+					} else if (num == 2) {
+						System.out.println("랭킹등록창 종료 합니다.");
+						if (mp3.isPlaying()) {
+							mp3.stop();
+							break;
+						}
+
+					} else {
+						System.out.println("잘못 입력 하셨습니다.");
+						if (mp3.isPlaying()) {
+							mp3.stop();
+						}
+
 					}
-					
-				} else if (num == 2) {
-					System.out.println("랭킹등록창 종료 합니다.");
-					if(mp3.isPlaying()) {
-						mp3.stop();
-					}
-					
-				} else {
-					System.out.println("잘못 입력 하셨습니다.");
-					if(mp3.isPlaying()) {
-						mp3.stop();
-					}
-					
 				}
-				num = 2;
 
 			}
 			// 랭킹 조회
@@ -124,6 +127,7 @@ public class main {
 			}
 			else if (num == 3) {
 				option.characterView(user_id);
+				num = 2;
 			}
 			// 게임 종료
 			else if (num == 4) {

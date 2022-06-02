@@ -24,7 +24,9 @@ public class View {
 
 		userDTO dto = new userDTO(user_id, pw);
 		userDAO dao = new userDAO(); 
+		
 		dao.userInsert(dto);
+		
 	}
 	//·Î±×ÀÎ
 	public boolean viewlogin() { 

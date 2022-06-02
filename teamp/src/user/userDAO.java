@@ -38,8 +38,9 @@ public class userDAO {
 			psmt.setString(2, pw);
 
 			cnt = psmt.executeUpdate();
-
+			System.out.println("회원가입이 되었습니다.");
 		} catch (SQLException e) {
+			System.out.println("아이디가 중복되었습니다.");
 //			e.printStackTrace();
 		} finally {
 			try {
