@@ -100,7 +100,7 @@ public class main {
 
 //		랭킹 등록및 조회 //수정가능성있음
 
-		System.out.println("바보");
+		System.out.println("바보이상익");
 
 	}
 
