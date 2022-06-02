@@ -28,9 +28,9 @@ public class CharacterGenerator {
 			def = r.nextInt(10);
 			System.out.println("방어력 : " + def);
 
-			hp = 1000 + r.nextInt(10);
+			hp = 100000 + r.nextInt(10);
 			System.out.println("체력: " + hp);
-			att = 1100 - (def + hp);
+			att = 110000 - (def + hp);
 			System.out.println("공격력 : " + att);
 
 			break;

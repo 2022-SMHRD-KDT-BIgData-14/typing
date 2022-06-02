@@ -89,7 +89,7 @@ public class main {
 					System.out.println("[1]등록  [2]종료");
 					num = sc.nextInt();
 					if (num == 1) {
-						rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
+						rankDTO rankdto = new rankDTO(cdto.getnickname(), round-1);
 						rankdao.rankInsert(rankdto);
 
 						System.out.println("랭킹등록 완료");

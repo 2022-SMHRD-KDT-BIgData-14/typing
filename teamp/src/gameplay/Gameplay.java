@@ -85,18 +85,25 @@ public class Gameplay {
 				break;
 			}
 			i++;
-			System.out.println("=============="+round+"라운드 클리어==============");
+			System.out.println("=============="+(round-1)+"라운드 클리어==============");
 			
 			if(mp3.isPlaying()) {
 				mp3.stop();
 			}
 			mp3.play(".\\music\\게임진행3_라운드상승 배경음.mp3");
 			
+			if(round==11) {
+				System.out.println("돼지감자 퇴치이후 좀비 확찐자 바이러스는 영원히 소멸되었다.\r\n"
+						+ "         잠시 혼란스러웠던 대관령은 모두의 협조를 통해 빠르게 복구되었고\r\n"
+						+ "         평화를 되찾았다.");
+				break;
+			}
 			System.out.println("[1]다음 라운드    [2]종료");
 			int input =sc.nextInt();
 			if(input==2) {
 				break;
 			}
+			
 		}
 		return round;
 	}
