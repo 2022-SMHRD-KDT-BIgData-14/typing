@@ -49,7 +49,7 @@ public class GameOption {
 		long timeFirst = System.currentTimeMillis();
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;
-		long typing = str.length() * 5 * 6 / ((timeDif / 1000) + 1);
+		long typing = str.length()  * 90 / ((timeDif / 1000) + 1);
 		System.out.println(typing + "타");
 		if (arr[i].equals(str)) {
 			return typing;
