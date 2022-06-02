@@ -16,8 +16,8 @@ public class Gameplay {
 		MP3Player mp3 = new MP3Player();
 		CharacterDTO dto = new CharacterDTO();
 	
-		int[] bossHp = {10000, 15000,20000, 25000, 30000, 35000, 40000, 45000, 50000,55000};
-		int bossAtt = 40;
+		int[] bossHp = {15000, 17000, 19000, 23000, 26000, 30000, 35000, 40000, 45000,50000};
+		int bossAtt = 20;
 		int heroHp = dao.characterStat(3,charNic);
 		int heroDef = dao.characterStat(2,charNic);
 		int heroAtt = dao.characterStat(1,charNic);

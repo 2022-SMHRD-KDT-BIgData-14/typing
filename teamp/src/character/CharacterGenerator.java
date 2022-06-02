@@ -30,7 +30,7 @@ public class CharacterGenerator {
 
 			hp = 1000 + r.nextInt(10);
 			System.out.println("체력: " + hp);
-			att = 1100 - (def + hp);
+			att = 1030 - (def + hp);
 			System.out.println("공격력 : " + att);
 
 			break;

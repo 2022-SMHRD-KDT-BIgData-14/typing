@@ -24,17 +24,6 @@ public class GameOption {
 	public long typingSec() {
 		//split 및 랜덤 영단어 출력.
 		String[] arr = str.split(",");
-//		System.out.println(arr[r.nextInt(arr.length)]);
-		//
-//		ArrayList<String> arr = new ArrayList<String>();
-//		arr.add("lydecker");
-//		arr.add("insufflation");
-//		arr.add("tailem");
-//		arr.add("rosbusinessconsulting");
-//		arr.add("getvar");
-//		arr.add("maol");
-//		arr.add("atkingdom");
-//		arr.add("마");
 		int i = r.nextInt(arr.length);
 		System.out.println("--"+arr[i] + "-- 입력해");
 //		for(int j=3 ; j>0; j--) {
