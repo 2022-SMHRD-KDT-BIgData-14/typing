@@ -28,43 +28,43 @@ public class main {
 		if(mp3.isPlaying()) {
 			mp3.stop();
 		}
-		// ÃÊ±â È­¸é
+		// ì´ˆê¸° í™”ë©´
 //		option.opening();
 		while (true) {
 			
-			mp3.play(".\\Music\\½ÃÀÛÈ­¸é ¹è°æÀ½.mp3");
+			mp3.play(".\\Music\\ì‹œì‘í™”ë©´ ë°°ê²½ìŒ.mp3");
 			
-			System.out.println("[1]È¸¿ø°¡ÀÔ  [2]·Î±×ÀÎ  [3]Á¾·á");
+			System.out.println("[1]íšŒì›ê°€ì…  [2]ë¡œê·¸ì¸  [3]ì¢…ë£Œ");
 			num = sc.nextInt();
 
-			// Á¾·á
+			// ì¢…ë£Œ
 			if (num == 3) {
 				view.Exit();
 			}
-			// È¸¿ø°¡ÀÔ
+			// íšŒì›ê°€ì…
 			else if (num == 1) {
 				view.viewSign();
 			}
-			// ·Î±×ÀÎ
+			// ë¡œê·¸ì¸
 			else if (num == 2) {
 				if (view.viewlogin()) {
 					user_id = view.getUser_id();
 					break;
 				}
 			}
-			// Àß¸ø ÀÔ·Â ÇßÀ»¶§
+			// ì˜ëª» ì…ë ¥ í–ˆì„ë•Œ
 			else {
-				System.out.println("Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 
 		}
-		// ·Î±×ÀÎ ÈÄ È­¸é
+		// ë¡œê·¸ì¸ í›„ í™”ë©´
 		while (num == 2) {
 			if(mp3.isPlaying()) {
 				mp3.stop();
 			}
-			mp3.play(".\\music\\¸Ş´º¼±ÅÃ½Ã È¿°úÀ½.mp3");
-			System.out.println("[1]°ÔÀÓ½ÃÀÛ  [2]·©Å·Á¶È¸  [3]Ä³¸¯ÅÍ Á¤º¸ [4]Á¾·á");
+			mp3.play(".\\music\\ë©”ë‰´ì„ íƒì‹œ íš¨ê³¼ìŒ.mp3");
+			System.out.println("[1]ê²Œì„ì‹œì‘  [2]ë­í‚¹ì¡°íšŒ  [3]ìºë¦­í„° ì •ë³´ [4]ì¢…ë£Œ");
 			num = sc.nextInt();
 			
 			
@@ -73,40 +73,40 @@ public class main {
 				if(mp3.isPlaying()) {
 					mp3.stop();
 				}
-				mp3.play(".\\music\\Ä³¸¯ÅÍ»ı¼ºÈ­¸é ¹è°æÀ½.mp3");
+				mp3.play(".\\music\\ìºë¦­í„°ìƒì„±í™”ë©´ ë°°ê²½ìŒ.mp3");
 				
-				// Ä³¸¯ÅÍ »ı¼º
+				// ìºë¦­í„° ìƒì„±
 				cdto = option.characterProduct(num, user_id);
 
-				// °ÔÀÓ ½ÇÇà
+				// ê²Œì„ ì‹¤í–‰
 				if(mp3.isPlaying()) {
 					mp3.stop();
 				}
 				int round = play.gamePlay(cdto);
 				
-				System.out.println("·©Å·À» µî·Ï ÇÏ½Ã°Ú½À´Ï±î");
+				System.out.println("ë­í‚¹ì„ ë“±ë¡ í•˜ì‹œê² ìŠµë‹ˆê¹Œ");
 				while (true) {
-					System.out.println("[1]µî·Ï  [2]Á¾·á");
+					System.out.println("[1]ë“±ë¡  [2]ì¢…ë£Œ");
 					num = sc.nextInt();
 					if (num == 1) {
 						rankDTO rankdto = new rankDTO(cdto.getnickname(), round);
 						rankdao.rankInsert(rankdto);
 
-						System.out.println("·©Å·µî·Ï ¿Ï·á");
+						System.out.println("ë­í‚¹ë“±ë¡ ì™„ë£Œ");
 						if (mp3.isPlaying()) {
 							mp3.stop();
 						}
 							num = 2;
 							break;
 					} else if (num == 2) {
-						System.out.println("·©Å·µî·ÏÃ¢ Á¾·á ÇÕ´Ï´Ù.");
+						System.out.println("ë­í‚¹ë“±ë¡ì°½ ì¢…ë£Œ í•©ë‹ˆë‹¤.");
 						if (mp3.isPlaying()) {
 							mp3.stop();
 						}
 						break;
 						
 					} else {
-						System.out.println("Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù.");
+						System.out.println("ì˜ëª» ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤.");
 						if (mp3.isPlaying()) {
 							mp3.stop();
 						}
@@ -115,12 +115,12 @@ public class main {
 				}
 
 			}
-			// ·©Å· Á¶È¸
+			// ë­í‚¹ ì¡°íšŒ
 			else if (num == 2) {
 				if(mp3.isPlaying()) {
 					mp3.stop();
 				}
-				mp3.play(".\\music\\·©Å·Á¶È¸È­¸é ¹è°æÀ½.mp3");
+				mp3.play(".\\music\\ë­í‚¹ì¡°íšŒí™”ë©´ ë°°ê²½ìŒ.mp3");
 				
 				rankview.rankView();
 				num = 2;
@@ -129,24 +129,24 @@ public class main {
 				option.characterView(user_id);
 				num = 2;
 			}
-			// °ÔÀÓ Á¾·á
+			// ê²Œì„ ì¢…ë£Œ
 			else if (num == 4) {
 				if(mp3.isPlaying()) {
 					mp3.stop();
 				}
-				mp3.play(".\\music\\°ÔÀÓÁ¾·áÈ­¸é ¹è°æÀ½.mp3");
+				mp3.play(".\\music\\ê²Œì„ì¢…ë£Œí™”ë©´ ë°°ê²½ìŒ.mp3");
 				
 				view.Exit();
 				break;
 			}
-			// Àß¸ø ÀÔ·Â ÇßÀ»¶§
+			// ì˜ëª» ì…ë ¥ í–ˆì„ë•Œ
 			else {
-				System.out.println("Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤.");
 				num = 2;
 			}
 		}
 
-//	 °ÔÀÓ Á¾·ùÈÄ È­¸é
+//	 ê²Œì„ ì¢…ë¥˜í›„ í™”ë©´
 
 	}
 

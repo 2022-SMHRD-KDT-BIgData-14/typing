@@ -10,16 +10,16 @@ public class View {
 	Scanner sc = new Scanner(System.in);
 	String user_id;
 	
-	//Á¾·á
+	//ì¢…ë£Œ
 	public void Exit() {
-		System.out.println("Á¾·á µÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¢…ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		
 	}
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	public void viewSign() {
-		System.out.print("¾ÆÀÌµğ >>> ");
+		System.out.print("ì•„ì´ë”” >>> ");
 		user_id = sc.next();
-		System.out.print("ºñ¹Ğ¹øÈ£ >>> ");
+		System.out.print("ë¹„ë°€ë²ˆí˜¸ >>> ");
 		String pw = sc.next();
 
 		userDTO dto = new userDTO(user_id, pw);
@@ -28,27 +28,27 @@ public class View {
 		dao.userInsert(dto);
 		
 	}
-	//·Î±×ÀÎ
+	//ë¡œê·¸ì¸
 	public boolean viewlogin() { 
-		System.out.print("¾ÆÀÌµğ >>> ");
+		System.out.print("ì•„ì´ë”” >>> ");
 
 		 user_id = sc.next();
 		 
-		System.out.print("ºñ¹Ğ¹øÈ£ >>> ");
+		System.out.print("ë¹„ë°€ë²ˆí˜¸ >>> ");
 		String user_pw = sc.next();
 		
 		userDTO user_dto = new userDTO(user_id, user_pw);
 		loginDAO userlogin = new loginDAO();
 		String stt = userlogin.login(user_dto);
 		
-		if (stt.equals("·Î±×ÀÎ ¼º°ø")) {
-			System.out.println("·Î±×ÀÎ ¼º°ø");
+		if (stt.equals("ë¡œê·¸ì¸ ì„±ê³µ")) {
+			System.out.println("ë¡œê·¸ì¸ ì„±ê³µ");
 			return true;
-		}else if(stt.equals("·Î±×ÀÎ ½ÇÆĞ")) {
-			System.out.println("·Î±×ÀÎ ½ÇÆĞ");
+		}else if(stt.equals("ë¡œê·¸ì¸ ì‹¤íŒ¨")) {
+			System.out.println("ë¡œê·¸ì¸ ì‹¤íŒ¨");
 			return false;
 		}else {
-			System.out.println("¾ÆÀÌµğ°¡ Æ²·È½À´Ï´Ù.");
+			System.out.println("ì•„ì´ë””ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.");
 			return false;
 		}
 	

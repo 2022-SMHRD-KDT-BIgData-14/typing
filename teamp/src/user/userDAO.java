@@ -38,9 +38,9 @@ public class userDAO {
 			psmt.setString(2, pw);
 
 			cnt = psmt.executeUpdate();
-			System.out.println("È¸¿ø°¡ÀÔÀÌ µÇ¾ú½À´Ï´Ù.");
+			System.out.println("íšŒì›ê°€ì…ì´ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (SQLException e) {
-			System.out.println("¾ÆÀÌµğ°¡ Áßº¹µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì•„ì´ë””ê°€ ì¤‘ë³µë˜ì—ˆìŠµë‹ˆë‹¤.");
 //			e.printStackTrace();
 		} finally {
 			try {

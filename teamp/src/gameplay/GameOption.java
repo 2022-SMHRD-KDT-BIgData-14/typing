@@ -15,22 +15,22 @@ public class GameOption {
 	CharacterDAO cdao = new CharacterDAO();
 	GameDAO dao = new GameDAO();
 
-	String[] bossname = { "Á»ºñ ÇŞ", "Á»ºñ µÎ ¹é", "Á»ºñ ¾Ë°¨ÀÚ", "Á»ºñ ¹ö¹ğÅ©", "Á»ºñ ¿À°¨ÀÚ", "Á»ºñ À¯ÄÜ°ñµå", "Á»ºñ ³²ÀÛ", "Á»ºñ ¼ö¹Ì", "Á»ºñ ¼­Èï°¨ÀÚ",
-			"¼÷ÁÖ µÅÁö°¨ÀÚ" };
+	String[] bossname = { "ì¢€ë¹„ í–‡", "ì¢€ë¹„ ë‘ ë°±", "ì¢€ë¹„ ì•Œê°ì", "ì¢€ë¹„ ë²„ë±…í¬", "ì¢€ë¹„ ì˜¤ê°ì", "ì¢€ë¹„ ìœ ì½˜ê³¨ë“œ", "ì¢€ë¹„ ë‚¨ì‘", "ì¢€ë¹„ ìˆ˜ë¯¸", "ì¢€ë¹„ ì„œí¥ê°ì",
+			"ìˆ™ì£¼ ë¼ì§€ê°ì" };
 
-//Å¸ÀÌÇÎ ¼Óµµ ÃøÁ¤
+//íƒ€ì´í•‘ ì†ë„ ì¸¡ì •
 	public long typingSec() {
 		ArrayList<String> arr = new ArrayList<String>();
-		arr.add("°¨ÀÚ");
-		arr.add("°í±¸¸¶");
-		arr.add("´ç±Ù");
-		arr.add("¾ç¹èÃß");
-		arr.add("µş±â");
-		arr.add("»ç°ú");
-		arr.add("µ¶¼ö¸®");
-		arr.add("¸¶");
+		arr.add("ê°ì");
+		arr.add("ê³ êµ¬ë§ˆ");
+		arr.add("ë‹¹ê·¼");
+		arr.add("ì–‘ë°°ì¶”");
+		arr.add("ë”¸ê¸°");
+		arr.add("ì‚¬ê³¼");
+		arr.add("ë…ìˆ˜ë¦¬");
+		arr.add("ë§ˆ");
 		int i = r.nextInt(arr.size());
-		System.out.println("--"+arr.get(i) + "-- ÀÔ·ÂÇØ");
+		System.out.println("--"+arr.get(i) + "-- ì…ë ¥í•´");
 		for(int j=3 ; j>0; j--) {
 			try {
 			System.out.println(j);
@@ -39,12 +39,12 @@ public class GameOption {
 //				e.printStackTrace();
 			}
 		}
-		System.out.println("ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ì…ë ¥í•˜ì„¸ìš”");
 		long timeFirst = System.currentTimeMillis();
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;
 		long typing = str.length() * 5 * 6 / ((timeDif / 1000) + 1);
-		System.out.println(typing + "Å¸");
+		System.out.println(typing + "íƒ€");
 		if (arr.get(i).equals(str)) {
 			return typing;
 		} else {
@@ -53,46 +53,46 @@ public class GameOption {
 		} //
 	}
 
-// º¸½º Ã¼·Â¹Ù	, º¸½º³×ÀÓ
+// ë³´ìŠ¤ ì²´ë ¥ë°”	, ë³´ìŠ¤ë„¤ì„
 	public void HpBar(int bossHp, int i) {
 		System.out.println("---" + bossname[i] + "---");
-		System.out.println("³²Àº º¸½º Ã¼·Â : " + bossHp);
+		System.out.println("ë‚¨ì€ ë³´ìŠ¤ ì²´ë ¥ : " + bossHp);
 		int hpBar = bossHp / (1000 + 500 * i);
 		for (int j = 0; j < hpBar + 1; j++) {
-			System.out.print("¡á");
+			System.out.print("â– ");
 		}
 		for (int j = 0; j < 10 - hpBar; j++) {
-			System.out.print("¡à");
+			System.out.print("â–¡");
 		}
 		System.out.println();
 	}
 
-// Ä³¸¯ÅÍ »ı¼º
+// ìºë¦­í„° ìƒì„±
 	public CharacterDTO characterProduct(int num, String user_id) {
 
 		String nick=charGenerator.charNickname();
 		while (true) {
-			CharacterDTO cdto = charGenerator.mainchar(nick); // Ä³¸¯ÅÍÀÔ·Â°ú ´É·ÂÄ¡ ºĞ¸®½ÃÄÑ¾ßÇÔ
-			System.out.println("Ä³¸¯ÅÍ ´É·ÂÄ¡¸¦ µ¹¸®°Ú½À´Ï±î");
-			System.out.println("[1] µ¹¸°´Ù [2] ÀÌ´ë·Î °£´Ù");
+			CharacterDTO cdto = charGenerator.mainchar(nick); // ìºë¦­í„°ì…ë ¥ê³¼ ëŠ¥ë ¥ì¹˜ ë¶„ë¦¬ì‹œì¼œì•¼í•¨
+			System.out.println("ìºë¦­í„° ëŠ¥ë ¥ì¹˜ë¥¼ ëŒë¦¬ê² ìŠµë‹ˆê¹Œ");
+			System.out.println("[1] ëŒë¦°ë‹¤ [2] ì´ëŒ€ë¡œ ê°„ë‹¤");
 			num = sc.nextInt();
 			if (num == 2) {
-				// ¸¸µç Ä³¸¯ÅÍ¸¦ µî·Ï½ÃÅ²´Ù
+				// ë§Œë“  ìºë¦­í„°ë¥¼ ë“±ë¡ì‹œí‚¨ë‹¤
 				cdao.CharacterBuild(cdto, user_id);
 				return cdto;
 			}else if(num == 1) {
 				
 			}else {
-				System.out.println("¹øÈ£¸¦ Àß¸ø ÀÔ·Â ÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ë²ˆí˜¸ë¥¼ ì˜ëª» ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 	}
 
-// °ÔÀÓ ¿ÀÇÁ´× ¹®±¸
+// ê²Œì„ ì˜¤í”„ë‹ ë¬¸êµ¬
 	public void opening() {
-		String str = "¶§´Â 20XX³â\r\n" + "°­¿øµµ ´ë°ü·É¿¡¼­ °¨ÀÚ Ç°ÁúÇâ»ó ¿¬±¸ ÁøÇà Áß\r\n"
-				+ "¿¬±¸¿øÀÇ ½Ç¼ö·Î °¨ÀÚ°¡ ¾Æ´Ñ 'µÅÁö°¨ÀÚ¿¡ °¨ÀÚDNA¸¦ Åõ¿©ÇÏ¿© Á»ºñ È®ÂğÀÚ ¹ÙÀÌ·¯½º°¡ ¹ß¹ß'Çß´Ù.\r\n"
-				+ "ÇÑ±¹Á¤ºÎ´Â Á»ºñ È®ÂğÀÚ ¹ÙÀÌ·¯½º¸¦ ¾ø¾Ö±âÀ§ÇØ ¹Ì±¹Á¤ºÎ¿¡ FBI Áö¿ø¿äÃ»À» ÇÏ¿©\r\n" + "Á»ºñ È®ÂğÀÚ ¹ÙÀÌ·¯½º¸¦ ¾ø¾Ö±â ½ÃÀÛÇÑ´Ù.";
+		String str = "ë•ŒëŠ” 20XXë…„\r\n" + "ê°•ì›ë„ ëŒ€ê´€ë ¹ì—ì„œ ê°ì í’ˆì§ˆí–¥ìƒ ì—°êµ¬ ì§„í–‰ ì¤‘\r\n"
+				+ "ì—°êµ¬ì›ì˜ ì‹¤ìˆ˜ë¡œ ê°ìê°€ ì•„ë‹Œ 'ë¼ì§€ê°ìì— ê°ìDNAë¥¼ íˆ¬ì—¬í•˜ì—¬ ì¢€ë¹„ í™•ì°ì ë°”ì´ëŸ¬ìŠ¤ê°€ ë°œë°œ'í–ˆë‹¤.\r\n"
+				+ "í•œêµ­ì •ë¶€ëŠ” ì¢€ë¹„ í™•ì°ì ë°”ì´ëŸ¬ìŠ¤ë¥¼ ì—†ì• ê¸°ìœ„í•´ ë¯¸êµ­ì •ë¶€ì— FBI ì§€ì›ìš”ì²­ì„ í•˜ì—¬\r\n" + "ì¢€ë¹„ í™•ì°ì ë°”ì´ëŸ¬ìŠ¤ë¥¼ ì—†ì• ê¸° ì‹œì‘í•œë‹¤.";
 		char[] arr = new char[str.length()];
 
 		try {
@@ -107,7 +107,7 @@ public class GameOption {
 		System.out.println();
 	}
 
-// Ä³¸¯ÅÍ Á¤º¸ Ãâ·Â
+// ìºë¦­í„° ì •ë³´ ì¶œë ¥
 	public void characterView(String user_id) {
 		dao.connect();
 		dao.characterView(user_id);

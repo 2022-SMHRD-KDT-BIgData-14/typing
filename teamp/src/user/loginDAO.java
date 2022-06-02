@@ -11,7 +11,7 @@ public class loginDAO {
 	PreparedStatement psmt;
 	ResultSet rs;
 
-	String str = "¾ÆÀÌµğ°¡ Æ²·È½À´Ï´Ù.";
+	String str = "ì•„ì´ë””ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.";
 	public String login(userDTO dto) {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -41,15 +41,15 @@ public class loginDAO {
 			if (rs.next()) {
 				String result = rs.getString(1);
 				if (result.equals(dto.getPw())) {
-					str = "·Î±×ÀÎ ¼º°ø";
+					str = "ë¡œê·¸ì¸ ì„±ê³µ";
 				}
 				else{
-					str = "·Î±×ÀÎ ½ÇÆĞ";
+					str = "ë¡œê·¸ì¸ ì‹¤íŒ¨";
 				}
 			}
 
 		} catch (SQLException e) {
-			str = "¾ÆÀÌµğ°¡ Æ²·È½À´Ï´Ù.";
+			str = "ì•„ì´ë””ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.";
 		} finally {
 			try {
 				if (rs != null)

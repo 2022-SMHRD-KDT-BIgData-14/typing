@@ -33,7 +33,7 @@ public class rankViewDAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			System.out.print("      -µî·ÏÀÏ-\t\t-´Ğ³×ÀÓ-\t-ÃÖ°í¶ó¿îµå-\n");
+			System.out.print("      -ë“±ë¡ì¼-\t\t-ë‹‰ë„¤ì„-\t-ìµœê³ ë¼ìš´ë“œ-\n");
 			while (rs.next()) {
 				System.out.print(rs.getString(1) + "\t");
 				System.out.print(rs.getString(2)+"\t");
