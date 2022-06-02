@@ -29,7 +29,7 @@ public class main {
 			mp3.stop();
 		}
 		// 초기 화면
-		option.opening();
+//		option.opening();
 		while (true) {
 			
 			mp3.play(".\\Music\\시작화면 배경음.mp3");
@@ -64,7 +64,7 @@ public class main {
 				mp3.stop();
 			}
 			mp3.play(".\\music\\메뉴선택시 효과음.mp3");
-			System.out.println("[1]게임시작  [2]랭킹조회  [3]종료");
+			System.out.println("[1]게임시작  [2]랭킹조회  [3]캐릭터 정보 [4]종료");
 			num = sc.nextInt();
 			
 			
@@ -122,8 +122,11 @@ public class main {
 				rankview.rankView();
 				num = 2;
 			}
-			// 게임 종료
 			else if (num == 3) {
+				option.characterView(user_id);
+			}
+			// 게임 종료
+			else if (num == 4) {
 				if(mp3.isPlaying()) {
 					mp3.stop();
 				}

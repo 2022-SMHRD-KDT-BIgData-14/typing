@@ -72,4 +72,6 @@ public class CharacterGenerator {
 		return new CharacterDTO(hp,att,def,nickname);
 		
 	}
+	
+	
 }

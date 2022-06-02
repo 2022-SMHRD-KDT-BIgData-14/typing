@@ -65,6 +65,25 @@ public class GameDAO {
 		}
 
 	}
+	// 캐릭터 정보 출력
+	public void characterView(String user_id) {
+		
+		String sql = "select * from character where id = "+"'"+user_id+"'";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			System.out.println("");
+			 System.out.println("닉네임\t\t공격력\t방어력\t체력");
+			while (rs.next()) {
+				System.out.print(rs.getString(4)+"\t\t"+rs.getString(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\n");
+			}
+			
+		} catch (SQLException e) {
+//			e.printStackTrace();
+		}
+		
+		
+	}
 
 // 서버 닫기
 	public void close() {

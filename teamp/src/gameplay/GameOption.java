@@ -13,6 +13,10 @@ public class GameOption {
 	Random r = new Random();
 	CharacterGenerator charGenerator = new CharacterGenerator();
 	CharacterDAO cdao = new CharacterDAO();
+	GameDAO dao = new GameDAO();
+
+	String[] bossname = { "좀비 햇", "좀비 두 백", "좀비 알감자", "좀비 버뱅크", "좀비 오감자", "좀비 유콘골드", "좀비 남작", "좀비 수미", "좀비 서흥감자",
+			"숙주 돼지감자" };
 
 //타이핑 속도 측정
 	public long typingSec() {
@@ -40,8 +44,9 @@ public class GameOption {
 		} //
 	}
 
-// 보스 체력바	
+// 보스 체력바	, 보스네임
 	public void HpBar(int bossHp, int i) {
+		System.out.println("---" + bossname[i] + "---");
 		System.out.println("남은 보스 체력 : " + bossHp);
 		int hpBar = bossHp / (1000 + 500 * i);
 		for (int j = 0; j < hpBar + 1; j++) {
@@ -68,6 +73,7 @@ public class GameOption {
 			}
 		}
 	}
+
 // 게임 오프닝 문구
 	public void opening() {
 		String str = "때는 20XX년\r\n" + "강원도 대관령에서 감자품질 향상을 위해 연구하다가\r\n"
@@ -85,6 +91,12 @@ public class GameOption {
 //			e.printStackTrace();
 		}
 		System.out.println();
+	}
+
+	public void characterView(String user_id) {
+		dao.connect();
+		dao.characterView(user_id);
+		dao.close();
 	}
 
 }
