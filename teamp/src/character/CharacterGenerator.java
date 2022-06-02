@@ -3,7 +3,7 @@ package character;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TEst {
+public class CharacterGenerator {
 	
 	String nickname;
 	public String getNickname() {

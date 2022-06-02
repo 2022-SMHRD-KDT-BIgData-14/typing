@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import character.CharacterDAO;
 import character.CharacterDTO;
-import character.TEst;
+import character.CharacterGenerator;
 import gameplay.GameOption;
 import gameplay.Gameplay;
 import rank.rankDAO;
@@ -22,8 +22,6 @@ public class main {
 		rankDAO rankdao = new rankDAO();
 		rankViewDAO rankview = new rankViewDAO();
 		View view = new View();
-		TEst test = new TEst();
-		CharacterDAO cdao = new CharacterDAO();
 		Gameplay play = new Gameplay();
 		CharacterDTO cdto;
 		GameOption option = new GameOption();

@@ -11,14 +11,14 @@ import java.util.Scanner;
 
 import character.CharacterDAO;
 import character.CharacterDTO;
-import character.TEst;
+import character.CharacterGenerator;
 import javazoom.jl.player.MP3Player;
 import user.userDTO;
 
 public class GameOption {
 	Scanner sc = new Scanner(System.in);
 	Random r = new Random();
-	TEst test = new TEst();
+	CharacterGenerator charGenerator = new CharacterGenerator();
 	CharacterDAO cdao = new CharacterDAO();
 
 //타이핑 속도 측정
@@ -64,7 +64,7 @@ public class GameOption {
 	public CharacterDTO characterProduct(int num, String user_id) {
 
 		while (true) {
-			CharacterDTO cdto = test.mainchar();
+			CharacterDTO cdto = charGenerator.mainchar();
 			System.out.println("캐릭터 능력치를 돌리겠습니까");
 			System.out.println("[1] 돌린다 [2] 이대로 간다");
 			num = sc.nextInt();
