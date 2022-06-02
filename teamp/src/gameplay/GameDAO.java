@@ -14,7 +14,7 @@ public class GameDAO {
 	PreparedStatement psmt = null;
 
 	
-	// ¼­¹ö ¿¬°á
+	// ì„œë²„ ì—°ê²°
 	public void connect() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -33,7 +33,7 @@ public class GameDAO {
 		}
 	}
 
-	// ÄÉ¸¯ÅÍ Á¤º¸ °¡Á®¿À±â
+	// ì¼€ë¦­í„° ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	public int characterStat(int num,CharacterDTO charNic) {
 		String str = charNic.getnickname();
 		String sql = "select att, def, hp from character where nickname = "+"'"+str+"'";
@@ -65,7 +65,7 @@ public class GameDAO {
 		}
 
 	}
-	// Ä³¸¯ÅÍ Á¤º¸ Ãâ·Â
+	// ìºë¦­í„° ì •ë³´ ì¶œë ¥
 	public void characterView(String user_id) {
 		
 		String sql = "select * from character where id = "+"'"+user_id+"'";
@@ -73,7 +73,7 @@ public class GameDAO {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			System.out.println("");
-			 System.out.println("´Ğ³×ÀÓ\t\t°ø°İ·Â\t¹æ¾î·Â\tÃ¼·Â");
+			 System.out.println("ë‹‰ë„¤ì„\t\tê³µê²©ë ¥\të°©ì–´ë ¥\tì²´ë ¥");
 			while (rs.next()) {
 				System.out.print(rs.getString(4)+"\t\t"+rs.getString(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\n");
 			}
@@ -85,7 +85,7 @@ public class GameDAO {
 		
 	}
 
-// ¼­¹ö ´İ±â
+// ì„œë²„ ë‹«ê¸°
 	public void close() {
 		try {
 			if (psmt != null)
