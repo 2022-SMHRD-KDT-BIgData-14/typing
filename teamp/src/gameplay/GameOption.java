@@ -70,8 +70,9 @@ public class GameOption {
 // 캐릭터 생성
 	public CharacterDTO characterProduct(int num, String user_id) {
 
+		String nick=charGenerator.charNickname();
 		while (true) {
-			CharacterDTO cdto = charGenerator.mainchar(); // 캐릭터입력과 능력치 분리시켜야함
+			CharacterDTO cdto = charGenerator.mainchar(nick); // 캐릭터입력과 능력치 분리시켜야함
 			System.out.println("캐릭터 능력치를 돌리겠습니까");
 			System.out.println("[1] 돌린다 [2] 이대로 간다");
 			num = sc.nextInt();
