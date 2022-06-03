@@ -25,7 +25,7 @@ public class CharacterGenerator {
 
 			Random r = new Random();
 
-			def = r.nextInt(10);
+			def = r.nextInt(4)+2;
 			System.out.println("방어력 : " + def);
 
 			hp = 1000 + r.nextInt(10);

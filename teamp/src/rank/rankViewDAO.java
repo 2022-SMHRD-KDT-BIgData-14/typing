@@ -31,11 +31,11 @@ public class rankViewDAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
-			System.out.print("      -등록일-\t\t-닉네임-\t-최고라운드-\n");
+			System.out.print("      -등록일-\t\t-최고라운드-\t-닉네임-\n");
 			while (rs.next()) {
 				System.out.print(rs.getString(1) + "\t");
-				System.out.println(rs.getString(3)+"\t");
-				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getString(3)+"\t");
+				System.out.println(rs.getString(2)+"\t");
 			}
 		} catch (SQLException e) {
 		} finally {
