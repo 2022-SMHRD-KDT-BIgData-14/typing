@@ -61,7 +61,7 @@ public class GameOption {
 			if(i>=1) {System.out.println("닉네임이 중복되었습니다");}
 			String nick = charGenerator.charNickname();
 			while (true) {
-				cdto = charGenerator.mainchar(nick); // 캐릭터입력과 능력치 분리시켜야함
+				cdto = charGenerator.mainchar(nick); 
 				System.out.println("캐릭터 능력치를 돌리겠습니까");
 				System.out.println("[1] 돌린다 [2] 이대로 간다");
 				num = sc.nextInt();

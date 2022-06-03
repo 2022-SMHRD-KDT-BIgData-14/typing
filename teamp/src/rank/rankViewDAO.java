@@ -34,8 +34,8 @@ public class rankViewDAO {
 			System.out.print("      -등록일-\t\t-닉네임-\t-최고라운드-\n");
 			while (rs.next()) {
 				System.out.print(rs.getString(1) + "\t");
+				System.out.println(rs.getString(3)+"\t");
 				System.out.print(rs.getString(2)+"\t");
-				System.out.println(rs.getString(3));
 			}
 		} catch (SQLException e) {
 		} finally {
