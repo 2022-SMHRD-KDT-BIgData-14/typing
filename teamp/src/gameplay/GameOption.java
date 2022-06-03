@@ -30,11 +30,9 @@ public class GameOption {
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;
 		long typing = str.length()  * 90 / ((timeDif / 1000) + 1);
-		System.out.println(typing + "타");
 		if (arr[i].equals(str)) {
 			return new GameVO(typing, true);
 		} else {
-			System.out.println("Miss");
 			return new GameVO(0, false);
 		} //
 	}
