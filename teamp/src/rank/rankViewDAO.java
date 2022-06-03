@@ -33,8 +33,8 @@ public class rankViewDAO {
 			rs = psmt.executeQuery();
 			System.out.print("      -등록일-\t\t-최고라운드-\t-닉네임-\n");
 			while (rs.next()) {
-				System.out.print(rs.getString(1) + "\t");
-				System.out.print(rs.getString(3)+"\t");
+				System.out.print(rs.getString(1) + "\t   ");
+				System.out.print(rs.getString(3)+"\t\t");
 				System.out.println(rs.getString(2)+"\t");
 			}
 		} catch (SQLException e) {
