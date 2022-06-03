@@ -26,15 +26,6 @@ public class GameOption {
 		String[] arr = str.split(",");
 		int i = r.nextInt(arr.length);
 		System.out.println("--"+arr[i] + "-- 입력하세요");
-//		for(int j=3 ; j>0; j--) {
-//			try {
-//			System.out.println(j);
-//				Thread.sleep(1000);
-//			} catch (InterruptedException e) {
-////				e.printStackTrace();
-//			}
-//		}
-//		System.out.println("입력하세요");
 		long timeFirst = System.currentTimeMillis();
 		String str = sc.next();
 		long timeDif = System.currentTimeMillis() - timeFirst;
@@ -108,7 +99,6 @@ public class GameOption {
 				Thread.sleep(100);
 			}
 		} catch (InterruptedException e) {
-//			e.printStackTrace();
 		}
 		System.out.println();
 	}

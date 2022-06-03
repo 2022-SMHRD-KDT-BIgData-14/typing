@@ -16,7 +16,6 @@ public class loginDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
 		}
 
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
@@ -26,7 +25,6 @@ public class loginDAO {
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
 		} catch (SQLException e) {
-//			e.printStackTrace();
 		}
 
 		String id = dto.getId();
@@ -59,7 +57,6 @@ public class loginDAO {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-//				e.printStackTrace();
 			}
 		}
 		return str;

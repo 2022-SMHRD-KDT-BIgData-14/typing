@@ -17,7 +17,6 @@ public class rankDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
 		}
 		String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 		String db_id = "campus_f_0516_3";
@@ -26,7 +25,6 @@ public class rankDAO {
 		try {
 			conn = DriverManager.getConnection(db, db_id, db_pw);
 		} catch (SQLException e) {
-//			e.printStackTrace();
 		}
 
 		try {
@@ -38,7 +36,6 @@ public class rankDAO {
 			psmt.setInt(2, round);
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
-//			e.printStackTrace();
 		} finally {
 			try {
 				if (psmt != null) {
@@ -49,7 +46,6 @@ public class rankDAO {
 				}
 			} catch (SQLException e) {
 
-//				e.printStackTrace();
 			}
 		}
 		return cnt;

@@ -19,7 +19,6 @@ public class CharacterDAO {
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 			} catch (ClassNotFoundException e) {
-//				e.printStackTrace();
 			}
 			String db = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
 			String db_id = "campus_f_0516_3";
@@ -28,7 +27,6 @@ public class CharacterDAO {
 			try {
 				conn = DriverManager.getConnection(db, db_id, db_pw);
 			} catch (SQLException e) {
-//				e.printStackTrace();
 			}
 			try {
 				int hp = characterdto.gethp();
@@ -45,7 +43,6 @@ public class CharacterDAO {
 				psmt.executeUpdate();
 				return 0;
 			} catch (SQLException e) {
-//				e.printStackTrace();
 				return 1;
 			}
 			 finally {
@@ -58,7 +55,6 @@ public class CharacterDAO {
 					}
 				} catch (SQLException e) {
 
-//					e.printStackTrace();
 				}
 			}
 		}

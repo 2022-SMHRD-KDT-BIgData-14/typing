@@ -148,7 +148,6 @@ public class main {
 			}
 		}
 
-//	 게임 종류후 화면
 
 	}
 
