@@ -98,9 +98,21 @@ public class Gameplay {
 				dto.endingask();
 				System.out.println();
 				//시간 남으면 시간으로 나오기
-				System.out.println("돼지감자 퇴치이후 좀비 확찐자 바이러스는 영원히 소멸되었다.\r\n"
-						+ "         잠시 혼란스러웠던 대관령은 모두의 협조를 통해 빠르게 복구되었고\r\n"
-						+ "         평화를 되찾았다.");
+					String str = "돼지감자 퇴치이후 좀비 확찐자 바이러스는 영원히 소멸되었다.\r\n"
+							+ "잠시 혼란스러웠던 대관령은 모두의 협조를 통해 빠르게 복구되었고\r\n"
+							+ "평화를 되찾았다.";
+					char[] arr = new char[str.length()];
+
+					try {
+						for (int j = 0; j < str.length(); j++) {
+							arr[j] = str.charAt(j);
+							System.out.print(arr[j]);
+							Thread.sleep(50);
+						}
+					} catch (InterruptedException e) {
+//						e.printStackTrace();
+					}
+					System.out.println();
 				break;
 			}
 			System.out.println("[1]다음 라운드    [2]종료");
