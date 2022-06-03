@@ -30,11 +30,11 @@ public class main {
 			mp3.stop();
 		}
 		// 초기 화면
+		mp3.play(".\\Music\\시작화면 배경음.mp3");
 		dto.openask();
 		option.opening();
 		while (true) {
 			
-			mp3.play(".\\Music\\시작화면 배경음.mp3");
 			
 			System.out.println("[1]회원가입  [2]로그인  [3]종료");
 			num = sc.nextInt();
@@ -50,10 +50,6 @@ public class main {
 			// 회원가입
 			else if (num == 1) {
 				view.viewSign();
-				if(mp3.isPlaying()) {
-					mp3.stop();
-				}
-				
 			}
 			// 로그인
 			else if (num == 2) {
