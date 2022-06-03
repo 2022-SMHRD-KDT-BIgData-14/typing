@@ -43,7 +43,7 @@ public class GameOption {
 	public void HpBar(int bossHp, int i) {
 		System.out.println("---" + bossname[i] + "---");
 		System.out.println("남은 보스 체력 : " + bossHp);
-		int hpBar = bossHp / (1000 + 500 * i);
+		int hpBar = bossHp / (1500 + 300 * i);
 		for (int j = 0; j < hpBar + 1; j++) {
 			System.out.print("■");
 		}

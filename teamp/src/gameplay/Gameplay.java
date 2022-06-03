@@ -17,7 +17,7 @@ public class Gameplay {
 		CharacterDTO dto = new CharacterDTO();
 		GameVO gvo = new GameVO(0,true);
 
-		int[] bossHp = { 15000, 17000, 19000, 23000, 26000, 30000, 34000, 38000, 43000, 48000 };
+		int[] bossHp = { 15000, 18000, 21000, 24000, 27000, 29000, 32000, 35000, 38000, 41000 };
 		int bossAtt = 20;
 		int heroHp = dao.characterStat(3, charNic);
 		int heroDef = dao.characterStat(2, charNic);
