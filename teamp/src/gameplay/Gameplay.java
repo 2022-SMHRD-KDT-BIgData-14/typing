@@ -38,7 +38,7 @@ public class Gameplay {
 			int cnt = 0;
 			turn = 1;
 			while (bossHp[i] > 0) {
-				System.out.println("===============" + turn + "턴===============");
+				System.out.println("================" + turn + "턴================");
 				turn++;
 				int fever = 1;
 // hp바  		
