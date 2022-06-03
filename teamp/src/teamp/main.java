@@ -42,6 +42,10 @@ public class main {
 			// 종료
 			if (num == 3) {
 				view.Exit();
+				if(mp3.isPlaying()) {
+					mp3.stop();
+				}
+				break;
 			}
 			// 회원가입
 			else if (num == 1) {

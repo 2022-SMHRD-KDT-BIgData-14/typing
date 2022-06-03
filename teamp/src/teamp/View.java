@@ -14,6 +14,7 @@ public class View {
 	public void Exit() {
 		System.out.println("종료 되었습니다.");
 		
+		
 	}
 	//회원가입
 	public void viewSign() {
