@@ -113,7 +113,7 @@ public class Gameplay {
 			}
 			i++;
 			System.out.println("==============" + (round - 1) + "라운드 클리어==============");
-
+			gvo = new GameVO(0,true);
 			if (mp3.isPlaying()) {
 				mp3.stop();
 			}
