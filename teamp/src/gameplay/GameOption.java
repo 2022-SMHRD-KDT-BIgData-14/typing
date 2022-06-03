@@ -21,7 +21,7 @@ public class GameOption {
 	
 	
 	//타이핑 속도 측정
-	public long typingSec() {
+	public GameVO typingSec() {
 		//split 및 랜덤 영단어 출력.
 		String[] arr = str.split(",");
 		int i = r.nextInt(arr.length);
@@ -32,10 +32,10 @@ public class GameOption {
 		long typing = str.length()  * 90 / ((timeDif / 1000) + 1);
 		System.out.println(typing + "타");
 		if (arr[i].equals(str)) {
-			return typing;
+			return new GameVO(typing, true);
 		} else {
 			System.out.println("Miss");
-			return 0;
+			return new GameVO(0, false);
 		} //
 	}
 

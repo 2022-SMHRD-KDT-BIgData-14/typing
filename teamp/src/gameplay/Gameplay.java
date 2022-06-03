@@ -15,6 +15,7 @@ public class Gameplay {
 		dao.connect();
 		MP3Player mp3 = new MP3Player();
 		CharacterDTO dto = new CharacterDTO();
+		GameVO gvo = new GameVO(0,true);
 
 		int[] bossHp = { 15000, 17000, 19000, 23000, 26000, 30000, 34000, 38000, 43000, 48000 };
 		int bossAtt = 20;
@@ -73,7 +74,14 @@ public class Gameplay {
 				if (round == 11) {
 					dto.boss10();
 				}
-				int typingAtt = (int) option.typingSec();
+				
+				if (gvo.getStrEquals()) {
+					System.out.println((int)gvo.getTypingSpeed() + "타");
+				} else {
+					System.out.println("Miss");
+				} //
+				gvo = option.typingSec();
+				int typingAtt = (int)gvo.getTypingSpeed();
 				int attack = typingAtt * heroAtt * fever;
 				// fever 버프
 				if (typingAtt != 0) {
