@@ -50,6 +50,10 @@ public class main {
 			// 회원가입
 			else if (num == 1) {
 				view.viewSign();
+				if(mp3.isPlaying()) {
+					mp3.stop();
+				}
+				
 			}
 			// 로그인
 			else if (num == 2) {
